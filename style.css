@@ -1,0 +1,105 @@
+/* RESET & BASIC SETUP */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* Default to black */
+    font-family: 'Courier New', Courier, monospace; /* Hacker font */
+    overflow: hidden; /* Stop the page from scrolling */
+}
+
+/* MAP FULLSCREEN */
+#map {
+    height: 100vh; /* 100% Viewport Height */
+    width: 100vw;  /* 100% Viewport Width */
+    z-index: 1;
+}
+
+/* THE FLOATING UI CONTAINER */
+#ui-overlay {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 320px; /* Width of the control panel */
+    z-index: 1000; /* Sits ON TOP of the map */
+    pointer-events: none; /* Allows clicks to pass through the empty space around the box */
+}
+
+/* THE GREEN BOX ITSELF */
+.status-panel {
+    background: rgba(0, 10, 0, 0.9); /* See-through black */
+    border: 1px solid #0f0; /* Matrix Green border */
+    color: #0f0; /* Matrix Green text */
+    padding: 20px;
+    pointer-events: auto; /* Makes the box clickable */
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.2); /* Glowing effect */
+}
+
+/* HEADERS */
+h2 {
+    font-size: 16px;
+    border-bottom: 1px solid #0f0;
+    margin: 0 0 15px 0;
+    padding-bottom: 5px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+/* COORDINATES DISPLAY */
+#data-stream {
+    font-size: 12px;
+    margin-bottom: 15px;
+    color: #6f6; /* Slightly dimmer green */
+    line-height: 1.4;
+}
+
+/* SCAN STATUS TEXT */
+#scan-readout {
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    min-height: 20px;
+    margin-bottom: 5px;
+    text-shadow: 0 0 5px #0f0; /* Text glow */
+}
+
+/* THE CONFIDENCE BAR */
+#confidence-meter {
+    height: 8px;
+    background: #0f0;
+    width: 0%;
+    margin-bottom: 20px;
+    transition: width 0.5s ease-out, background-color 0.3s; /* Smooth animation */
+    box-shadow: 0 0 5px rgba(0,255,0,0.5);
+}
+
+/* THE BUTTON */
+button {
+    background: #000;
+    color: #0f0;
+    border: 1px solid #0f0;
+    padding: 15px;
+    width: 100%;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.2s;
+}
+
+/* BUTTON HOVER EFFECT */
+button:hover {
+    background: #0f0;
+    color: #000;
+    box-shadow: 0 0 20px #0f0; /* Intense glow on hover */
+}
+
+/* BUTTON DISABLED STATE (When scanning) */
+button:disabled {
+    border-color: #555;
+    color: #555;
+    cursor: not-allowed;
+    box-shadow: none;
+    background: #111;
+}
