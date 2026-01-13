@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>SATELLITE_RECON_V3</title>
+    <title>SATELLITE_RECON_V4</title>
     
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="style.css" />
@@ -19,7 +19,7 @@
 
     <div id="ui-overlay">
         <div class="status-panel">
-            <h2>SATELLITE UPLINK V67</h2>
+            <h2>SATELLITE UPLINK V4</h2>
             <div id="data-stream">
                 LAT: <span id="lat-disp">--.---</span> <br>
                 LNG: <span id="lng-disp">--.---</span>
@@ -28,10 +28,10 @@
             <div id="confidence-meter"></div>
             
             <button id="mode-btn" onclick="toggleMode()">ACTIVATE TARGETING</button>
-            <button id="db-btn" onclick="toggleDatabase()">VIEW INTEL DATABASE</button>
+            <button id="db-btn" onclick="toggleDatabase()">OPEN DISCOVERY TAB</button>
             
             <div id="instruction-text" style="display:none;">
-                [!] DRAG RED BOX ON MAP TO SCAN
+                [!] DRAG BOX TO INITIATE GRID SCAN
             </div>
         </div>
     </div>
@@ -40,12 +40,11 @@
 
     <div id="database-overlay" style="display:none;">
         <div class="db-header">
-            <h2>CONFIRMED TARGETS</h2>
-            <button class="close-btn" onclick="toggleDatabase()">CLOSE X</button>
+            <h2>DETECTED TARGETS</h2>
+            <button class="close-btn" onclick="toggleDatabase()">CLOSE</button>
         </div>
         <div id="db-grid">
-            <div style="color:#0f0; padding:20px;">LOADING ENCRYPTED DATA...</div>
-        </div>
+            </div>
     </div>
 
     <div id="map"></div>
